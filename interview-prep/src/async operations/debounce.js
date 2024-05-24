@@ -8,16 +8,16 @@ import './App.css';
  * @returns function
  */
 
-function debounce(fn, delay) {
-  let timer;
-
-  return function(...args) {
-    clearTimeout(timer);
-    timer = setTimeout(() => {
-      fn(args);
-    }, delay);
-  };
-}
+export function debounce(func, wait) {
+    let timer;
+    return function(...args) {
+      const context = this;
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        func.apply(context, args); // Correctly bind 'this' and pass arguments
+      }, wait);
+    }
+  }
 
 function App() {
   const debouncedFunctionRef = useRef(debounce(function() {
