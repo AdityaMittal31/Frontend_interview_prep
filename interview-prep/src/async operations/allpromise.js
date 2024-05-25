@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import './App.css';
 
+// Task 2 - Implement Promise.all polyfill
 async function myPromiseAll(promises) {
   if (!Array.isArray(promises)) {
     throw new TypeError('Argument must be an array');
