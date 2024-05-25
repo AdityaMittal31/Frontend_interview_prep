@@ -1,6 +1,7 @@
 import {useState, useEffect} from 'react';
 import './styles.css';
-
+/** Task 3 - Build a traffic Light
+*/
 export default function TrafficLight() {
 
   const [currentLight, setCurrentLight] = useState('green');
